@@ -1,0 +1,21 @@
+export type ThemeKey = "silk" | "atlas" | "lola" | "registon" | "anor" | "paxta" | "suzani" | "tong" | "oltin" | "chinni";
+export interface Sample {
+  g: string; b: string; date: string; time: string; place: string;
+  kicker: string; programTitle: string; program: [string, string][];
+}
+export interface ThemeMeta { label: string; desc: string; sample: Sample }
+
+// Har bir uslubda alohida toʻy formati va dasturi — chunki har bir toʻy har xil.
+export const THEMES: Record<ThemeKey, ThemeMeta> = {
+  silk: { label: "Ipak yoʻli", desc: "Koʻk va oltin, klassik nikoh", sample: { g: "Madina", b: "Jasur", date: "2027-04-24", time: "18:00", place: "“Navro‘z” toʻyxonasi, Toshkent", kicker: "Nikoh toʻyi taklifnomasi", programTitle: "Nikoh toʻyi dasturi", program: [["16:00", "Mehmonlarni kutib olish"], ["17:00", "Nikoh marosimi"], ["18:00", "Ziyofat va tabriklar"], ["21:00", "Raqs va tort"]] } },
+  atlas: { label: "Atlas", desc: "Yorqin ikat, quvnoq kayfiyat", sample: { g: "Dilnoza", b: "Aziz", date: "2027-05-08", time: "14:00", place: "Registon yonidagi hovli, Samarqand", kicker: "Kelin salom va ziyofat", programTitle: "Kelin salom kuni", program: [["14:00", "Kelin salom"], ["15:30", "Oila davrasi"], ["17:00", "Katta ziyofat"], ["20:00", "Sovgʻalar va duolar"]] } },
+  lola: { label: "Lola", desc: "Yumshoq yashil va pushti, bahorgi", sample: { g: "Zarina", b: "Bobur", date: "2027-03-20", time: "11:00", place: "Bogʻ-hovli, Buxoro", kicker: "Fotiha toʻyi taklifnomasi", programTitle: "Fotiha toʻyi", program: [["11:00", "Fotiha oʻqish"], ["12:00", "Dasturxon"], ["14:00", "Sovgʻa almashish"], ["15:30", "Xayrlashuv"]] } },
+  registon: { label: "Registon", desc: "Feruza va oltin, shohona", sample: { g: "Sevara", b: "Otabek", date: "2027-06-11", time: "19:00", place: "Ark majmuasi, Xiva", kicker: "Katta toʻy taklifnomasi", programTitle: "Ikki kunlik toʻy", program: [["1-kun · 19:00", "Qiz oqshomi"], ["2-kun · 08:00", "Nahor oshi"], ["2-kun · 17:00", "Katta ziyofat"], ["2-kun · 21:00", "Kelinni kuzatish"]] } },
+  anor: { label: "Anor", desc: "Qizil va pushti, ishqiy", sample: { g: "Nigora", b: "Sardor", date: "2027-02-13", time: "18:30", place: "“Oqsaroy” majlislar zali, Namangan", kicker: "Kechki bazm taklifnomasi", programTitle: "Kechki bazm", program: [["18:30", "Qizil gilamda kutib olish"], ["19:00", "Nikoh"], ["19:30", "Kechki taom"], ["21:00", "Birinchi raqs"], ["22:30", "Tort"]] } },
+  paxta: { label: "Oq paxta", desc: "Minimal, oq va bej, ixcham", sample: { g: "Malika", b: "Timur", date: "2027-09-05", time: "15:00", place: "Kichik kafe, Fargʻona", kicker: "Ixcham nikoh taklifnomasi", programTitle: "Ixcham nikoh (50 mehmon)", program: [["15:00", "Nikoh"], ["16:00", "Yengil taomlar"], ["17:30", "Fotosessiya"], ["19:00", "Yakun"]] } },
+  suzani: { label: "Suzani", desc: "Binafsha va sariq, milliy naqsh", sample: { g: "Gulnoza", b: "Sherzod", date: "2027-04-10", time: "08:00", place: "Mahalla klubi, Andijon", kicker: "Mahalla toʻyi taklifnomasi", programTitle: "Mahalla toʻyi", program: [["08:00", "Nahor oshi"], ["10:00", "Mahalla duosi"], ["13:00", "Katta dasturxon"], ["16:00", "Kelin chiqarish"]] } },
+  tong: { label: "Tong", desc: "Shafaq ranglari, yengil va iliq", sample: { g: "Feruza", b: "Akmal", date: "2027-05-22", time: "06:30", place: "Chorvoq sohili, Toshkent viloyati", kicker: "Tonggi nikoh taklifnomasi", programTitle: "Tonggi nikoh", program: [["06:30", "Quyosh bilan nikoh"], ["08:00", "Nonushta"], ["10:00", "Tabriklar"], ["12:00", "Xayrlashuv"]] } },
+  oltin: { label: "Oltin kecha", desc: "Qora va oltin, gala kechasi", sample: { g: "Aziza", b: "Rustam", date: "2027-12-18", time: "19:00", place: "Grand Hall, Toshkent", kicker: "Gala kechasi taklifnomasi", programTitle: "Gala kechasi", program: [["19:00", "Mehmonlarni kutib olish"], ["20:00", "Nikoh marosimi"], ["20:30", "Gala kechki taom"], ["22:00", "Jonli musiqa va raqs"]] } },
+  chinni: { label: "Chinni", desc: "Rishton chinnisi, koʻk va oq", sample: { g: "Laylo", b: "Doston", date: "2027-08-14", time: "12:00", place: "Oilaviy hovli, Rishton", kicker: "Oilaviy davra taklifnomasi", programTitle: "Oilaviy davra", program: [["12:00", "Nikoh duosi"], ["13:00", "Milliy taomlar"], ["15:00", "Oilaviy suratlar"], ["17:00", "Choy va shirinliklar"]] } },
+};
+export const ORDER = Object.keys(THEMES) as ThemeKey[];
